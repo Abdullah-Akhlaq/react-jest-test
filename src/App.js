@@ -1,30 +1,14 @@
-import { useState } from "react";
+
+import { Children } from "react";
 import "./App.css";
+import Counter from "./components/counter";
+import MyComponent from "./components/mycomponent";
 
-
-
-
-const  App=()=> {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-
-  return (
-    <div>
-      <p data-testid="count">{count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-    </div>
-  );
-}
+const App = () => {
+  return <div>
+    <Counter/>
+    <MyComponent/>
+  </div>;
+};
 
 export default App;
-
-
-

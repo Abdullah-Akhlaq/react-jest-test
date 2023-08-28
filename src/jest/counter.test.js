@@ -1,11 +1,12 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 
-import App from '../App';
 
+
+import { fireEvent, render } from '@testing-library/react';
+
+import Counter from '../components/counter';
 
 test('counter increments and decrements', () => {
-  const { getByText, getByTestId } = render(<App />);
+  const { getByText, getByTestId } = render(<Counter />);
 
   const incrementButton = getByText('Increment');
   const decrementButton = getByText('Decrement');
