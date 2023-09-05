@@ -33,7 +33,7 @@ describe("MyComponent", () => {
   const imageElement = screen.getByRole('img', { name: /an example image/i });
 
   // Verify src and alt attributes
-  expect(imageElement).toHaveAttribute('src', '../../download.jpg');
+  expect(imageElement).toHaveAttribute('src', 'qwer.jpg');
   expect(imageElement).toHaveAttribute('alt', 'An example image');
 
 

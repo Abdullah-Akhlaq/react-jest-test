@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const MyComponent = () => {
   return (
     <div>
@@ -15,6 +17,8 @@ const MyComponent = () => {
 
   <img src="qwer.jpg" alt="An example image" />
   <a href="https://example.com">Click me</a>
+
+
     </div>
   );
 };
