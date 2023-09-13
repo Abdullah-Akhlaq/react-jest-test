@@ -1,18 +1,17 @@
-
-
+import { useRoutes } from "react-router";
 import "./App.css";
-import Counter from "./components/counter";
-import AntDesignForm from "./components/form";
-import MyComponent from "./components/mycomponent";
-
+import Header from "./components/header/header";
+import { routes } from "./routes";
 
 const App = () => {
-  return <div>
-    <Counter/>
-    <MyComponent/>
-    {/* <CRUDTable/> */}
-    <AntDesignForm/>
-  </div>;
+  const pages=useRoutes(routes)
+  return (
+    <div>
+  {pages}
+
+
+    </div>
+  );
 };
 
 export default App;
