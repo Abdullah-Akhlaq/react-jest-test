@@ -11,7 +11,7 @@ const MainLayout = () => {
 
   const [heading, setHeading] = useState("Counter");
 
-  const headingArray = ["Counter", "Layout", "home"];
+  const headingArray = ["Counter", "userList", "home"];
   const navigate = useNavigate();
 
   return (

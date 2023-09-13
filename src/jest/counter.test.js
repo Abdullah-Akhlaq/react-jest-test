@@ -1,22 +1,19 @@
+import { fireEvent, render, screen } from "@testing-library/react";
 
+import Counter from "../components/counter";
 
+test("counter increments and decrements", () => {
+  render(<Counter />);
 
-import { fireEvent, render } from '@testing-library/react';
+  const incrementButton = screen.getByText("Increment");
+  const decrementButton = screen.getByText("Decrement");
+  const countDisplay = screen.getByTestId("count");
 
-import Counter from '../components/counter';
-
-test('counter increments and decrements', () => {
-  const { getByText, getByTestId } = render(<Counter />);
-
-  const incrementButton = getByText('Increment');
-  const decrementButton = getByText('Decrement');
-  const countDisplay = getByTestId('count');
-
-  expect(countDisplay).toHaveTextContent('0');
+  expect(countDisplay).toHaveTextContent("0");
 
   fireEvent.click(incrementButton);
-  expect(countDisplay).toHaveTextContent('1');
+  expect(countDisplay).toHaveTextContent("1");
 
   fireEvent.click(decrementButton);
-  expect(countDisplay).toHaveTextContent('0');
+  expect(countDisplay).toHaveTextContent("0");
 });

@@ -20,6 +20,8 @@ const Loadable = (Component) => (props) =>
 const MainLayout = Loadable(lazy(() => import("./layout/mainlayout")));
 const CounterPage = Loadable(lazy(() => import("./components/counter")));
 const LandingPage = Loadable(lazy(() => import("./components/landingPage")));
+const UserPage = Loadable(lazy(() => import("./components/user-list/user-list")));
+
 
 export const routes = [
   { path: "/", element: <Navigate to="home" /> },
@@ -43,6 +45,10 @@ export const routes = [
       {
         path: "counter",
         element: <CounterPage />,
+      },
+      {
+        path: "userList",
+        element: <UserPage />,
       },
     ],
   },

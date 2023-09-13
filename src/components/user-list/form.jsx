@@ -1,28 +1,38 @@
 import React, { useState } from "react";
-import { Form, Input, DatePicker, TimePicker, Button } from "antd";
+import "./form.scss";
 
-const AntDesignForm = () => {
- 
+const AntDesignForm = ({ setUserValues }) => {
+  const [name, setName] = useState("");
 
-  const [name,setName]=useState('');
+  const [email, setEmail] = useState("");
 
-  const [email,setEmail]=useState('');
-
-
-
-  const onFinish = (values) => {
-    console.log("Received values:", values);
+  const onFinish = (e) => {
+    e.preventDefault();
+    setUserValues((prev) => [...prev, { name: name, email: email }]);
   };
 
-
   return (
-    <form action="" onSubmit={onFinish}>
-      <label >Name</label>
-      <input type="text" value={name} onChange={(e)=>setName(e.target.value)} />
-      <label >Email</label>
-      <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+    <form action="" onSubmit={onFinish} className="vertical-form">
+      <div className="form-field">
+        <label>Name</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="form-field">
+        <label>Email</label>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
 
-
+      <div className="form-field">
+        <button type="submit">Submit</button>
+      </div>
     </form>
   );
 };
