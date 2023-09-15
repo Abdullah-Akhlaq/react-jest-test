@@ -1,22 +1,19 @@
 import { render, screen } from "@testing-library/react";
+import Usertable from "../components/user-list/user-table";
 
-import AntDesignForm from "../components/user-list/form";
-import userEvent from "@testing-library/user-event";
+test("it checked the number of rows in table", () => {
+  const users = [
+    {
+      name: "ASDF",
+      email: "ASD",
+    },
+    {
+      name: "ASDDFGS",
+      email: "ASDFFSFD",
+    },
+  ];
+  render(<Usertable userValues={users} />);
 
-test('it show two inputs', () => {
-  render(<AntDesignForm />);
-  const input = screen.getAllByRole("textbox");
-  const button = screen.getByRole("button");
- 
-
-  expect(input).toHaveLength(2);
-  expect(button).toBeInTheDocument();
+//   <--        --->
+//   screen.logTestingPlaygroundURL();
 });
-
-test('Check element on button submission', ()=>{
-  render(<AntDesignForm/>)
-
-  const [inputElement,emailElement]=screen.getAllByRole('textbox');
-
-  
-})
